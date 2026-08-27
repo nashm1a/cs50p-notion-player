@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIGHT DRIVE</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: url('assets/vamp.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 24px;
+            overflow: hidden;
+        }
+        .controls-bar {
+            background: rgba(18, 18, 18, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 30px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: #e0e0e0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.1s ease;
+        }
+        button:hover { transform: scale(1.15); }
+        .track-info {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.85rem;
+        }
+        .track-title { font-weight: 600; color: #fff; }
+        .track-artist { font-size: 0.75rem; color: #a0a0a0; }
+    </style>
+</head>
+<body>
+
+    <div class="controls-bar">
+        <button id="prev-btn">⏮</button>
+        <button id="play-btn">▶</button>
+        <button id="next-btn">⏭</button>
+        <div class="track-info">
+            <span id="track-title" class="track-title">Loading...</span>
+            <span id="track-artist" class="track-artist"></span>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script>
+        const playlist = [
+            { title: "Catchalot", artist: "", src: "assets/catch.mp3" }
+        ];
+        let currentIndex = 0;
+        const player = document.getElementById('audio-player');
+        const playBtn = document.getElementById('play-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const titleEl = document.getElementById('track-title');
+        const artistEl = document.getElementById('track-artist');
+
+        function loadTrack(index) {
+            const track = playlist[index];
+            titleEl.textContent = track.title;
+            artistEl.textContent = track.artist;
+            player.src = track.src;
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (player.paused) {
+                player.play();
+                playBtn.textContent = '⏸';
+            } else {
+                player.pause();
+                playBtn.textContent = '▶';
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % playlist.length;
+            loadTrack(currentIndex);
+            player.play();
+            playBtn.textContent = '⏸';
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(currentIndex);
+            player.play();
+            playBtn.textContent = '⏸';
+        });
+
+        // Initialize first track
+        loadTrack(currentIndex);
+    </script>
+</body>
+</html>
