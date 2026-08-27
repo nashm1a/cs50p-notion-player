@@ -92,7 +92,6 @@ def build_html_file(title, bg_source, tracks):
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
 
-            background: rgba(18, 18, 18, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -126,13 +125,13 @@ def build_html_file(title, bg_source, tracks):
         }}
         .track-title {{
             display: inline-block;
-            padding-left: 100%;
-            animation: marquee 8s linear infinite;
+            white-space: nowrap;
+            animation: marquee 6s linear infinite;
             font-weight: 600;
             color: #fff;
         }}
         @keyframes marquee {{
-            0%   {{ transform: translateX(0); }}
+            0%   {{ transform: translateX(120px); }}
             100% {{ transform: translateX(-100%); }}
         }}
         .track-artist {{ font-size: 0.75rem; color: #a0a0a0; }}
