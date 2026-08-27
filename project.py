@@ -118,21 +118,39 @@ def build_html_file(title, bg_source, tracks):
             flex-direction: column;
             font-size: 0.85rem;
         }}
-        .track-title {{ font-weight: 600; color: #fff; }}
+        .track-title-container {{
+            width: 120px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }}
+        .track-title {{
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 8s linear infinite;
+            font-weight: 600;
+            color: #fff;
+        }}
+        @keyframes marquee {{
+            0%   {{ transform: translateX(0); }}
+            100% {{ transform: translateX(-100%); }}
+        }}
         .track-artist {{ font-size: 0.75rem; color: #a0a0a0; }}
     </style>
 </head>
 <body>
 
     <div class="controls-bar">
-        <button id="prev-btn">⏮</button>
-        <button id="play-btn">▶</button>
-        <button id="next-btn">⏭</button>
-        <div class="track-info">
-            <span id="track-title" class="track-title">Loading...</span>
-            <span id="track-artist" class="track-artist"></span>
+            <button id="prev-btn">⏮</button>
+            <button id="play-btn">▶</button>
+            <button id="next-btn">⏭</button>
+            <div class="track-info">
+                <div class="track-title-container">
+                    <span id="track-title" class="track-title">Loading...</span>
+                </div>
+                <span id="track-artist" class="track-artist"></span>
+            </div>
         </div>
-    </div>
 
     <audio id="audio-player"></audio>
 
