@@ -84,10 +84,10 @@ def build_html_file(title, bg_source, tracks):
             justify-content: center;
             padding-bottom: 24px;
             overflow: hidden;
-            transform: scale(1.5); /* 30% larger */
+            transform: scale(1.34); /* 30% larger */
         }}
         .controls-bar {{
-            background: rgba(18, 18, 18, 0.25); /* 45% opaque dark */
+            background: rgba(18, 18, 18, 0.2); /* 45% opaque dark */
 
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
