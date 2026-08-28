@@ -87,8 +87,9 @@ def build_html_file(title, bg_source, tracks):
         }}
         .controls-bar {{
             width: fit-content;
+            min-width: 400px;
             max-width: 90%;
-            padding: 8px 32px;
+            padding: 10px 42px;
             background: rgba(30, 30, 30, 0.45);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -111,17 +112,17 @@ def build_html_file(title, bg_source, tracks):
             border: none;
             color: #ffffff;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 16px;
             transition: transform 0.1s ease;
         }}
         button:hover {{ transform: scale(1.15); }}
         .track-info {{
             display: flex;
             flex-direction: column;
-            font-size: 0.85rem;
+            gap: 2px;
         }}
         .track-title-container {{
-            width: 140px;
+            width: 170px;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -131,13 +132,17 @@ def build_html_file(title, bg_source, tracks):
             white-space: nowrap;
             animation: marquee 7s linear infinite;
             font-weight: 600;
+            font-size: 0.95rem;
             color: #fff;
         }}
         @keyframes marquee {{
             0%   {{ transform: translateX(100%); }}
             100% {{ transform: translateX(-100%); }}
         }}
-        .track-artist {{ font-size: 0.75rem; color: #a0a0a0; }}
+        .track-artist {{ 
+            font-size: 0.95rem; 
+            color: #d0d0d0; 
+        }}
     </style>
 </head>
 <body>
