@@ -84,7 +84,7 @@ def build_html_file(title, bg_source, tracks):
             justify-content: center;
             padding-bottom: 24px;
             overflow: hidden;
-            transform: scale(1.30); /* 30% larger */
+            transform: scale(1); /* 30% larger */
         }}
         .controls-bar {{
             width: 320px;
