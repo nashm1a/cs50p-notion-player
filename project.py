@@ -82,50 +82,46 @@ def build_html_file(title, bg_source, tracks):
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-bottom: 16px;
+            padding-bottom: 20px;
             overflow: hidden;
         }}
         .controls-bar {{
-            width: 90%;
-            max-width: 600px;
-            padding: 10px 28px;
-            
-            /* Glassmorphism setup from top image */
-            background: rgba(40, 35, 30, 0.45); 
+            width: fit-content;
+            max-width: 90%;
+            padding: 8px 32px;
+            background: rgba(30, 30, 30, 0.45);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 50px; /* Gives it the exact smooth pill ends */
-            
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            justify-content: center;
+            gap: 24px;
+            color: #e0e0e0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }}
         .button-group {{
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }}
         button {{
             background: none;
             border: none;
             color: #ffffff;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 15px;
             transition: transform 0.1s ease;
         }}
         button:hover {{ transform: scale(1.15); }}
         .track-info {{
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
             font-size: 0.85rem;
-            flex-grow: 1;
         }}
         .track-title-container {{
-            width: 180px;
+            width: 140px;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -133,12 +129,12 @@ def build_html_file(title, bg_source, tracks):
         .track-title {{
             display: inline-block;
             white-space: nowrap;
-            animation: marquee 8s linear infinite;
+            animation: marquee 7s linear infinite;
             font-weight: 600;
             color: #fff;
         }}
         @keyframes marquee {{
-            0%   {{ transform: translateX(180px); }}
+            0%   {{ transform: translateX(100%); }}
             100% {{ transform: translateX(-100%); }}
         }}
         .track-artist {{ font-size: 0.75rem; color: #a0a0a0; }}
