@@ -84,9 +84,11 @@ def build_html_file(title, bg_source, tracks):
             justify-content: center;
             padding-bottom: 24px;
             overflow: hidden;
-            transform: scale(1.34); /* 30% larger */
+            transform: scale(1.30); /* 30% larger */
         }}
         .controls-bar {{
+            width: 320px;
+            padding: 6px 24px;
             background: rgba(18, 18, 18, 0.2); /* 45% opaque dark */
 
             backdrop-filter: blur(14px);
@@ -96,7 +98,7 @@ def build_html_file(title, bg_source, tracks):
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 30px;
-            padding: 12px 24px;
+    
             display: flex;
             align-items: center;
             gap: 16px;
