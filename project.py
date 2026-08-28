@@ -82,28 +82,31 @@ def build_html_file(title, bg_source, tracks):
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-bottom: 24px;
+            padding-bottom: 16px;
             overflow: hidden;
-            transform: scale(1); /* 30% larger */
         }}
         .controls-bar {{
-            width: 520px;
-            padding: 6px 24px;
-            background: rgba(18, 18, 18, 0.2); /* 45% opaque dark */
-
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 30px;
-    
+            width: 90%;
+            max-width: 600px;
+            padding: 10px 28px;
+            
+            /* Glassmorphism setup from top image */
+            background: rgba(40, 35, 30, 0.45); 
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50px; /* Gives it the exact smooth pill ends */
+            
             display: flex;
             align-items: center;
-            gap: 16px;
-            color: #e0e0e0;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }}
+        .button-group {{
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }}
         button {{
             background: none;
@@ -117,10 +120,12 @@ def build_html_file(title, bg_source, tracks):
         .track-info {{
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
             font-size: 0.85rem;
+            flex-grow: 1;
         }}
         .track-title-container {{
-            width: 120px;
+            width: 180px;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -128,12 +133,12 @@ def build_html_file(title, bg_source, tracks):
         .track-title {{
             display: inline-block;
             white-space: nowrap;
-            animation: marquee 6s linear infinite;
+            animation: marquee 8s linear infinite;
             font-weight: 600;
             color: #fff;
         }}
         @keyframes marquee {{
-            0%   {{ transform: translateX(120px); }}
+            0%   {{ transform: translateX(180px); }}
             100% {{ transform: translateX(-100%); }}
         }}
         .track-artist {{ font-size: 0.75rem; color: #a0a0a0; }}
@@ -142,16 +147,18 @@ def build_html_file(title, bg_source, tracks):
 <body>
 
     <div class="controls-bar">
+        <div class="button-group">
             <button id="prev-btn">⏮</button>
             <button id="play-btn">▶</button>
             <button id="next-btn">⏭</button>
-            <div class="track-info">
-                <div class="track-title-container">
-                    <span id="track-title" class="track-title">Loading...</span>
-                </div>
-                <span id="track-artist" class="track-artist"></span>
-            </div>
         </div>
+        <div class="track-info">
+            <div class="track-title-container">
+                <span id="track-title" class="track-title">Loading...</span>
+            </div>
+            <span id="track-artist" class="track-artist"></span>
+        </div>
+    </div>
 
     <audio id="audio-player"></audio>
 
