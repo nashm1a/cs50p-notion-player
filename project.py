@@ -87,7 +87,7 @@ def build_html_file(title, bg_source, tracks):
             transform: scale(1); /* 30% larger */
         }}
         .controls-bar {{
-            width: 320px;
+            width: 520px;
             padding: 6px 24px;
             background: rgba(18, 18, 18, 0.2); /* 45% opaque dark */
 
