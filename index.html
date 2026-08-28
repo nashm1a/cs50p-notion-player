@@ -19,7 +19,7 @@
         }
         .controls-bar {
             width: fit-content;
-            min-width: 400px;
+            min-width: 440px;
             max-width: 90%;
             padding: 10px 42px;
             background: rgba(30, 30, 30, 0.45);
@@ -54,7 +54,7 @@
             gap: 2px;
         }
         .track-title-container {
-            width: 170px;
+            width: 190px;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -64,7 +64,7 @@
             white-space: nowrap;
             animation: marquee 7s linear infinite;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: #fff;
         }
         @keyframes marquee {
@@ -97,7 +97,7 @@
 
     <script>
         const playlist = [
-            { title: "Catchalot", artist: "Onda", src: "assets/catch.mp3" }
+            { title: "Catchalot", artist: "", src: "assets/catch.mp3" }
         ];
         let currentIndex = 0;
         const player = document.getElementById('audio-player');

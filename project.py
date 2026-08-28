@@ -87,7 +87,7 @@ def build_html_file(title, bg_source, tracks):
         }}
         .controls-bar {{
             width: fit-content;
-            min-width: 400px;
+            min-width: 440px;
             max-width: 90%;
             padding: 10px 42px;
             background: rgba(30, 30, 30, 0.45);
@@ -122,7 +122,7 @@ def build_html_file(title, bg_source, tracks):
             gap: 2px;
         }}
         .track-title-container {{
-            width: 170px;
+            width: 190px;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -132,7 +132,7 @@ def build_html_file(title, bg_source, tracks):
             white-space: nowrap;
             animation: marquee 7s linear infinite;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: #fff;
         }}
         @keyframes marquee {{
